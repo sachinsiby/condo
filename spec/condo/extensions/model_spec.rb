@@ -9,7 +9,8 @@ describe Condo::Extensions::Model do
   end
 
   context ".tenanted" do
-    before(:each) { ActiveRecord::Base.current_tenant = OpenStruct.new(id: 1)}
+    before(:each) { ActiveRecord::Base.current_tenant = OpenStruct.new(id: 1) }
+    after(:each) { ActiveRecord::Base.current_tenant = nil }
     let(:scoping_query) {"SELECT \"tenanted_models\".* FROM \"tenanted_models\" WHERE \"tenanted_models\".\"tenant_id\" = 1"}
     it "sets a default scope only on the tenanted model" do
       expect(TenantedModel.all.to_sql).to include(scoping_query)
