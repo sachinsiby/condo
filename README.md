@@ -6,7 +6,7 @@ on ActiveRecord models using model scoping.
 
 ## Usage
 
-Ensure that tenanted model tables have a tenant_id foreign key on them.
+Ensure that tenanted model tables have a `tenant_id` foreign key on them.
 For every model that needs to be tenanted:
 
 ```ruby
@@ -16,7 +16,7 @@ For every model that needs to be tenanted:
 ```
 
 The onus is on the library user to switch the tenant in application code.
-This is generally done in the ApplicationController or on a rails console.
+This is generally done in the `ApplicationController` or on a rails console.
 The only requirement is that the tenant object responds to `id`:
 
 ```ruby
