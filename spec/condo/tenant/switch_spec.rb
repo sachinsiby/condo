@@ -5,13 +5,13 @@ describe Condo::Tenant do
     let(:first_tenant) { Tenant.create }
     let(:second_tenant) { Tenant.create}
     it "switches the tenant correctly" do
-      expect(ActiveRecord::Base.current_tenant).to eq(nil)
+      expect(Condo::Tenant.current_tenant).to eq(nil)
 
       Condo::Tenant.switch!(first_tenant)
-      expect(ActiveRecord::Base.current_tenant.id).to eq(1)
+      expect(Condo::Tenant.current_tenant.id).to eq(1)
 
       Condo::Tenant.switch!(second_tenant)
-      expect(ActiveRecord::Base.current_tenant.id).to eq(2)
+      expect(Condo::Tenant.current_tenant.id).to eq(2)
 
     end
   end

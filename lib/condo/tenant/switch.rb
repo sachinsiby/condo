@@ -1,7 +1,11 @@
 module Condo
   module Tenant
     def self.switch!(tenant)
-      ActiveRecord::Base.current_tenant = tenant
+      RequestStore.store[:current_tenant] = tenant
+    end
+
+    def self.current_tenant
+      RequestStore.store[:current_tenant]
     end
   end
 end

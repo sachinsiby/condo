@@ -9,6 +9,8 @@ Gem::Specification.new do |s|
   s.license = 'MIT'
 
   s.add_dependency 'activerecord', '~> 4.0'
+  s.add_dependency 'rails'
+  s.add_dependency 'request_store', '~> 1.1'
 
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'pry-byebug'
