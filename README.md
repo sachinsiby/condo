@@ -1,4 +1,4 @@
-# Condo
+# Condo [![Build Status](https://travis-ci.org/sachinsiby/condo.svg?branch=master)](https://travis-ci.org/sachinsiby/condo)
 
 A gem that implements the "[shared database/shared schema](https://msdn.microsoft.com/en-us/library/aa479086.aspx#mlttntda_sdshs)" multi-tenancy approach
 on ActiveRecord models using model scoping.
